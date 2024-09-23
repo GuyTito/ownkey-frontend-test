@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .transmooth {
+    @apply duration-300 ease-in-out;
+  }
+}
