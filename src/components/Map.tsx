@@ -151,6 +151,7 @@ const AppMap = ({ searchArea, locations, reset }: MapProps) => {
       mapContainer.removeEventListener("touchstart", handleMouseDownListener);
       mapContainer.removeEventListener("touchend", handleMouseUpListener);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mapInstance, coreLibrary, mapContainer, drawing]);
 
   return (
@@ -163,17 +164,14 @@ const AppMap = ({ searchArea, locations, reset }: MapProps) => {
           <PoiMarkers pois={locations} setActiveMarker={setActiveMarker} />
         )}
 
-        {/* {!drawing && ( */}
         <MapControl position={ControlPosition.RIGHT_BOTTOM}>
           <button
-            // onClick={startDrawing}
             onClick={toggleDrawing}
-            className="bg-gray-200 text-black hover:opacity-80 transmooth rounded-full py-1 px-2 text-sm mr-2"
+            className="bg-pink-500 text-white hover:opacity-80 transmooth rounded-full py-1 px-2 text-sm mr-2"
           >
             {drawing ? "Stop" : "Draw"}
           </button>
         </MapControl>
-        {/* )} */}
 
         {vertices.length > 0 && !locations && (
           <MapControl position={ControlPosition.TOP}>
