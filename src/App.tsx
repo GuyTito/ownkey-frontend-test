@@ -69,7 +69,7 @@ export default function App() {
 function PropertyList({ locations }: { locations: Poi[] }) {
   return (
     <>
-      {locations?.length &&
+      {locations?.length > 0 &&
         locations?.map((item: Poi) => (
           <div key={item.id} className="flex items-center gap-3">
             <img
