@@ -20,7 +20,7 @@ export default function App() {
     useFetchLocations<any>({
       query: "rental apartments",
     });
-  let locations = data?.results?.map((item: any) => ({
+  const locations = data?.results?.map((item: any) => ({
     ...item,
     location: { ...item.position, lng: item.position.lon },
   }));
